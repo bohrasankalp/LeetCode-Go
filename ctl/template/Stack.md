@@ -8,10 +8,10 @@ weight: 5
 
 ![](https://img.halfrost.com/Leetcode/Stack.png)
 
-- 括号匹配问题及类似问题。第 20 题，第 921 题，第 1021 题。
-- 栈的基本 pop 和 push 操作。第 71 题，第 150 题，第 155 题，第 224 题，第 225 题，第 232 题，第 946 题，第 1047 题。
-- 利用栈进行编码问题。第 394 题，第 682 题，第 856 题，第 880 题。
-- **单调栈**。**利用栈维护一个单调递增或者递减的下标数组**。第 84 题，第 456 题，第 496 题，第 503 题，第 739 题，第 901 题，第 907 题，第 1019 题。
+- Bracket matching issues and similar. Question 20, question 921, question 1021.
+- Basic pop and push operations on the stack. Question 71, Question 150, Question 155, Question 224, Question 225, Question 232, Question 946, Question 1047.
+- Coding problems using the stack. Question 394, Question 682, Question 856, Question 880.
+- **Monotonic stack**. **Use the stack to maintain a monotonically increasing or decreasing subscript array**. Question 84, Question 456, Question 496, Question 503, Question 739, Question 901, Question 907, Question 1019.
 
 
 

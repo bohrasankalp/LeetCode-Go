@@ -11,9 +11,10 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/spf13/cobra"
+
 	m "github.com/halfrost/LeetCode-Go/ctl/models"
 	"github.com/halfrost/LeetCode-Go/ctl/util"
-	"github.com/spf13/cobra"
 )
 
 var (
@@ -30,7 +31,7 @@ func newBuildCommand() *cobra.Command {
 		Use:   "build <subcommand>",
 		Short: "Build doc related commands",
 	}
-	//mc.PersistentFlags().StringVar(&logicEndpoint, "endpoint", "localhost:5880", "endpoint of logic service")
+	// mc.PersistentFlags().StringVar(&logicEndpoint, "endpoint", "localhost:5880", "endpoint of logic service")
 	mc.AddCommand(
 		newBuildREADME(),
 		newBuildChapterTwo(),
@@ -84,7 +85,7 @@ func buildREADME() {
 		lpa      m.LeetCodeProblemAll
 		info     m.UserInfo
 	)
-	// 请求所有题目信息
+	// Request all subject information
 	body := getProblemAllList()
 	problemsMap, optimizingIds := map[int]m.StatStatusPairs{}, []int{}
 	err := json.Unmarshal(body, &lpa)
@@ -92,9 +93,9 @@ func buildREADME() {
 		fmt.Println(err)
 		return
 	}
-	//writeFile("leetcode_problem.json", body)
+	// writeFile("leetcode_problem.json", body)
 
-	// 拼凑 README 需要渲染的数据
+	// Piece together the data that the README needs to render
 	problems = lpa.StatStatusPairs
 	info = m.ConvertUserInfoModel(lpa)
 	for _, v := range problems {
@@ -108,7 +109,7 @@ func buildREADME() {
 	omdrows := m.ConvertMdModelFromIds(problemsMap, optimizingIds)
 	sort.Sort(m.SortByQuestionID(omdrows))
 
-	// 按照模板渲染 README
+	// Render the README according to the template
 	res, err := renderReadme("./template/template.markdown", len(solutionIds), try, m.Mdrows{Mdrows: mdrows}, m.Mdrows{Mdrows: omdrows}, info)
 	if err != nil {
 		fmt.Println(err)
@@ -116,7 +117,7 @@ func buildREADME() {
 	}
 	util.WriteFile("../README.md", res)
 	fmt.Println("write file successful")
-	//makeReadmeFile(mds)
+	// makeReadmeFile(mds)
 }
 
 func renderReadme(filePath string, total, try int, mdrows, omdrows m.Mdrows, user m.UserInfo) ([]byte, error) {
@@ -142,7 +143,7 @@ func renderReadme(filePath string, total, try int, mdrows, omdrows m.Mdrows, use
 			output = append(output, []byte("\n")...)
 		} else if ok, _ := regexp.Match("{{.TotalNum}}", line); ok {
 			reg := regexp.MustCompile("{{.TotalNum}}")
-			newByte := reg.ReplaceAll(line, []byte(fmt.Sprintf("以下已经收录了 %v 道题的题解，还有 %v 道题在尝试优化到 beats 100%%", total, try)))
+			newByte := reg.ReplaceAll(line, []byte(fmt.Sprintf("The solutions of %v questions have been collected below, and there are still %v questions trying to optimize to beats 100%%", total, try)))
 			output = append(output, newByte...)
 			output = append(output, []byte("\n")...)
 		} else if ok, _ := regexp.Match("{{.PersonalData}}", line); ok {
@@ -152,7 +153,7 @@ func renderReadme(filePath string, total, try int, mdrows, omdrows m.Mdrows, use
 			output = append(output, []byte("\n")...)
 		} else if ok, _ := regexp.Match("{{.OptimizingTable}}", line); ok {
 			reg := regexp.MustCompile("{{.OptimizingTable}}")
-			newByte := reg.ReplaceAll(line, []byte(fmt.Sprintf("以下 %v 道题还需要优化到 100%% 的题目列表\n\n%v", (user.OptimizingEasy+user.OptimizingMedium+user.OptimizingHard), omdrows.AvailableTable())))
+			newByte := reg.ReplaceAll(line, []byte(fmt.Sprintf("The following %v questions still need to be optimized to 100%% of the list of questions\\n\\n%v", (user.OptimizingEasy+user.OptimizingMedium+user.OptimizingHard), omdrows.AvailableTable())))
 			output = append(output, newByte...)
 			output = append(output, []byte("\n")...)
 		} else {
@@ -162,9 +163,9 @@ func renderReadme(filePath string, total, try int, mdrows, omdrows m.Mdrows, use
 	}
 }
 
-// internal: true  渲染的链接都是 hugo 内部链接，用户生成 hugo web
+// internal: true The rendered links are Hugo internal links, user generated hugo web
 //
-//	false 渲染的链接是外部 HTTPS 链接，用于生成 PDF
+//	false The rendered link is an external HTTPS link, used to generate the PDF
 func buildChapterTwo(internal bool) {
 	var (
 		gr        m.GraphQLResp
@@ -188,8 +189,8 @@ func buildChapterTwo(internal bool) {
 			fmt.Printf("err = %v\n", err)
 		}
 		tls := m.GenerateTagMdRows(solutionIds, tl, mdrows, internal)
-		//fmt.Printf("tls = %v\n", tls)
-		//  按照模板渲染 README
+		// fmt.Printf("tls = %v\n", tls)
+		//  Render the README according to the template
 		res, err := renderChapterTwo(fmt.Sprintf("./template/%v.md", chapterTwoFileName[index]), m.TagLists{TagLists: tls})
 		if err != nil {
 			fmt.Println(err)
@@ -224,7 +225,7 @@ func loadMetaData(filePath string) (map[int]m.TagList, error) {
 		}
 		s := strings.Split(string(line), "|")
 		v, _ := strconv.Atoi(strings.Split(s[1], ".")[0])
-		// v[0] 是题号，s[4] time, s[5] space, s[6] favorite
+		// v[0] is the question number, s[4] time, s[5] space, s[6] favorite
 		metaMap[v] = m.TagList{
 			FrontendQuestionID: int32(v),
 			Acceptance:         "",
@@ -266,17 +267,17 @@ func renderChapterTwo(filePath string, tls m.TagLists) ([]byte, error) {
 
 func buildBookMenu() {
 	copyLackFile()
-	// 按照模板重新渲染 Menu
+	// Re-render the Menu according to the template
 	res, err := renderBookMenu("./template/menu.md")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	util.WriteFile("../website/content/menu/index.md", res)
+	util.WriteFile("./website/content/menu/index.md", res)
 	fmt.Println("generate Menu successful")
 }
 
-// 拷贝 leetcode 目录下的题解 README 文件至第四章对应文件夹中
+// Copy the solution README file in the leetcode directory to the corresponding folder in Chapter 4
 func copyLackFile() {
 	solutionIds, soName, _ := util.LoadSolutionsDir()
 	_, ch4Ids := util.LoadChapterFourDir()
@@ -288,7 +289,7 @@ func copyLackFile() {
 		}
 	}
 	if len(needCopy) > 0 {
-		fmt.Printf("有 %v 道题需要拷贝到第四章中\n", len(needCopy))
+		fmt.Printf("There are %v questions that need to be copied to Chapter 4\n", len(needCopy))
 		for i := 0; i < len(needCopy); i++ {
 			if needCopy[i][4] == '.' {
 				tmp, err := strconv.Atoi(needCopy[i][:4])
@@ -304,7 +305,7 @@ func copyLackFile() {
 			}
 		}
 	} else {
-		fmt.Printf("【第四章没有需要添加的题解，已经完整了】\n")
+		fmt.Printf(" [Chapter 4 has no problem solutions that need to be added, it is already complete] \n")
 	}
 }
 

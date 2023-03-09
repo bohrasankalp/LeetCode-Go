@@ -8,16 +8,16 @@ weight: 8
 
 ![](https://img.halfrost.com/Leetcode/Backtracking.png)
 
-- 排列问题 Permutations。第 46 题，第 47 题。第 60 题，第 526 题，第 996 题。
-- 组合问题 Combination。第 39 题，第 40 题，第 77 题，第 216 题。
-- 排列和组合杂交问题。第 1079 题。
-- N 皇后终极解法(二进制解法)。第 51 题，第 52 题。
-- 数独问题。第 37 题。
-- 四个方向搜索。第 79 题，第 212 题，第 980 题。
-- 子集合问题。第 78 题，第 90 题。
-- Trie。第 208 题，第 211 题。
-- BFS 优化。第 126 题，第 127 题。
-- DFS 模板。(只是一个例子，不对应任何题)
+- Permutations of permutation questions. Question 46, question 47. Question 60, Question 526, Question 996.
+- Combination question Combination. Question 39, Question 40, Question 77, Question 216.
+- Permutation and combination hybridization problems. Question 1079.
+- N queens ultimate solution (binary solution). Question 51, question 52.
+- Sudoku problems. Question 37.
+- Search in four directions. Question 79, Question 212, Question 980.
+- Subcollection issues. Question 78, question 90.
+- Trie. Question 208, question 211.
+- BFS optimization. Question 126, question 127.
+- DFS templates. (just an example, does not correspond to any question)
 
 ```go
 func combinationSum2(candidates []int, target int) [][]int {
@@ -38,7 +38,7 @@ func findcombinationSum2(nums []int, target, index int, c []int, res *[][]int) {
 		return
 	}
 	for i := index; i < len(nums); i++ {
-		if i > index && nums[i] == nums[i-1] { // 这里是去重的关键逻辑
+		if i > index && nums[i] == nums[i-1] { //Here is the key logic for deduplication
 			continue
 		}
 		if target >= nums[i] {
@@ -49,7 +49,7 @@ func findcombinationSum2(nums []int, target, index int, c []int, res *[][]int) {
 	}
 }
 ```
-- BFS 模板。(只是一个例子，不对应任何题)
+- BFS template. (just an example, does not correspond to any question)
 
 ```go
 func updateMatrix_BFS(matrix [][]int) [][]int {

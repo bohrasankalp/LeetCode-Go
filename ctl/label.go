@@ -16,7 +16,7 @@ import (
 
 var (
 	chapterOneFileOrder = []string{"_index", "Data_Structure", "Algorithm", "Time_Complexity"}
-	chapterOneMenuOrder = []string{"_index", "#关于作者", "Data_Structure", "Algorithm", "Time_Complexity"}
+	chapterOneMenuOrder = []string{"_index", "#about the author", "Data_Structure", "Algorithm", "Time_Complexity"}
 	chapterTwoFileOrder = []string{"_index", "Array", "String", "Two_Pointers", "Linked_List", "Stack", "Tree", "Dynamic_Programming", "Backtracking", "Depth_First_Search", "Breadth_First_Search",
 		"Binary_Search", "Math", "Hash_Table", "Sorting", "Bit_Manipulation", "Union_Find", "Sliding_Window", "Segment_Tree", "Binary_Indexed_Tree"}
 	chapterThreeFileOrder = []string{"_index", "Segment_Tree", "UnionFind", "LRUCache", "LFUCache"}
@@ -35,13 +35,13 @@ var (
 
 	chapterMap = map[string]map[string]string{
 		"ChapterOne": {
-			"_index":          "第一章 序章",
-			"Data_Structure":  "1.1 数据结构知识",
-			"Algorithm":       "1.2 算法知识",
-			"Time_Complexity": "1.3 时间复杂度",
+			"_index":          "Chapter 1 Prologue",
+			"Data_Structure":  "1.1 Data structure knowledge",
+			"Algorithm":       "1.2 Algorithm knowledge",
+			"Time_Complexity": "1.3 Time Complexity",
 		},
 		"ChapterTwo": {
-			"_index":               "第二章 算法专题",
+			"_index":               "Chapter 2 Algorithms Topics",
 			"Array":                "2.01 Array",
 			"String":               "2.02 String",
 			"Two_Pointers":         "2.03 ✅ Two Pointers",
@@ -63,14 +63,14 @@ var (
 			"Binary_Indexed_Tree":  "2.19 ✅ Binary Indexed Tree",
 		},
 		"ChapterThree": {
-			"_index":       "第三章 一些模板",
+			"_index":       "Chapter 3 Some Templates",
 			"Segment_Tree": "3.1 Segment Tree",
 			"UnionFind":    "3.2 UnionFind",
 			"LRUCache":     "3.3 LRUCache",
 			"LFUCache":     "3.4 LFUCache",
 		},
 		"ChapterFour": {
-			"_index": "第四章 Leetcode 题解",
+			"_index": "Chapter 4 Leetcode Solution",
 		},
 	}
 )
@@ -79,7 +79,7 @@ func getChapterFourFileOrder() ([]string, []int) {
 	solutions, solutionIds := util.LoadChapterFourDir()
 	chapterFourFileOrder := []string{"_index"}
 	chapterFourFileOrder = append(chapterFourFileOrder, solutions...)
-	fmt.Printf("ChapterFour 中包括 _index 有 %v 个文件, len(id) = %v\n", len(chapterFourFileOrder), len(solutionIds))
+	fmt.Printf("There are %v files in ChapterFour including _index, len(id) = %v\n", len(chapterFourFileOrder), len(solutionIds))
 	return chapterFourFileOrder, solutionIds
 }
 
@@ -146,33 +146,33 @@ func addPreNextLabel(order, preOrder []string, chapterFourIds []int, preChapter,
 		tmp := ""
 		if index == 0 {
 			if chapter == "ChapterOne" {
-				// 第一页不需要“上一章”
-				tmp = "\n\n" + delLine + fmt.Sprintf("<p align = \"right\"><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">下一页➡️</a></p>\n", chapter, order[index+1])
+				// The first page does not need a "previous chapter"
+				tmp = "\n\n" + delLine + fmt.Sprintf("<p align = \"right\"><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">next page➡️</a></p>\n", chapter, order[index+1])
 			} else {
 				if chapter == "ChapterFour" {
-					tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️上一章</a></p>\n", preChapter, preOrder[len(preOrder)-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">下一页➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
+					tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️previous chapter</a></p>\n", preChapter, preOrder[len(preOrder)-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">Next page ➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
 				} else {
-					tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️上一章</a></p>\n", preChapter, preOrder[len(preOrder)-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">下一页➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
+					tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️previous chapter</a></p>\n", preChapter, preOrder[len(preOrder)-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">next page➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
 				}
 			}
 		} else if index == len(order)-1 {
 			if chapter == "ChapterFour" {
-				// 最后一页不需要“下一页”
-				tmp = "\n\n" + delLine + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">⬅️上一页</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)-1]), order[index-1])
+				// Last page doesn't need "next page"
+				tmp = "\n\n" + delLine + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">⬅️previous page</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)-1]), order[index-1])
 			} else {
-				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️上一页</a></p>\n", chapter, order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">下一章➡️</a></p>\n", nextChapter) + preNextFotter
+				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️previous page</a></p>\n", chapter, order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">next chapter➡️</a></p>\n", nextChapter) + preNextFotter
 			}
 		} else if index == 1 {
 			if chapter == "ChapterFour" {
-				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">⬅️上一页</a></p>\n", chapter) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">下一页➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
+				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">⬅️previous page</a></p>\n", chapter) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">next page➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
 			} else {
-				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">⬅️上一页</a></p>\n", chapter) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">下一页➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
+				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/\">⬅️previous page</a></p>\n", chapter) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">next page➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
 			}
 		} else {
 			if chapter == "ChapterFour" {
-				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">⬅️上一页</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)-1]), order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">下一页➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
+				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">⬅️previous page</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)-1]), order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/%v/\">next page➡️</a></p>\n", chapter, util.GetChpaterFourFileNum(chapterFourIds[(index-1)+1]), order[index+1]) + preNextFotter
 			} else {
-				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️上一页</a></p>\n", chapter, order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">下一页➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
+				tmp = "\n\n" + preNextHeader + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">⬅️previous page</a></p>\n", chapter, order[index-1]) + fmt.Sprintf("<p><a href=\"https://books.halfrost.com/leetcode/%v/%v/\">next page➡️</a></p>\n", chapter, order[index+1]) + preNextFotter
 			}
 		}
 
@@ -185,7 +185,7 @@ func addPreNextLabel(order, preOrder []string, chapterFourIds []int, preChapter,
 			fmt.Println(err)
 			return
 		}
-		// 当前没有上一页和下一页，才添加
+		// There is no previous page and next page, just add
 		if !exist && err == nil {
 			res, err = eofAdd(fmt.Sprintf("../website/content/%v/%v.md", chapter, path), tmp)
 			if err != nil {
@@ -196,7 +196,7 @@ func addPreNextLabel(order, preOrder []string, chapterFourIds []int, preChapter,
 			count++
 		}
 	}
-	fmt.Printf("添加了 %v 个文件的 pre-next\n", count)
+	fmt.Printf("Added pre-next of %v files\n", count)
 }
 
 func eofAdd(filePath string, labelString string) ([]byte, error) {
@@ -250,14 +250,14 @@ func delPreNextLabel(order []string, chapterFourIds []int, chapter string) {
 			fmt.Println(err)
 			return
 		}
-		// 存在才删除
+		// Delete only if it exists
 		if exist && err == nil {
 			removeLine(fmt.Sprintf("../website/content/%v/%v.md", chapter, path), lineNum+1)
 			count++
 		}
 	}
-	fmt.Printf("删除了 %v 个文件的 pre-next\n", count)
-	// 另外一种删除方法
+	fmt.Printf("Deleted pre-next of %v files\n", count)
+	// another way to delete
 	// res, err := eofDel(fmt.Sprintf("../website/content/ChapterOne/%v.md", v))
 	// if err != nil {
 	// 	fmt.Println(err)

@@ -2,7 +2,7 @@ baseURL = "https://books.halfrost.com/leetcode"
 languageCode = "en-us"
 title = "LeetCode Cookbook"
 theme = "book"
-googleAnalytics = "UA-82753806-3"
+googleAnalytics = ""
 enableEmoji = true
 enableGitInfo = true
 

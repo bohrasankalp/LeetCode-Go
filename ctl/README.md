@@ -1,20 +1,23 @@
 # LeetCode-Go ctl
 
-## 配置方法
+## Configuration Method
 
-1. 在`.gitignore`中，添加一行`*.toml`
-2. 在`LeetCode-Go`目录下，添加文本文件`config.toml`。
-3. 把以下内容复制到`config.toml`中。
-4. 把`config.toml`中的`test`分别修改为你的 leetcode `用户名`和`密码`。
-5. 去 leetcode 登录后，把网站 cookie 复制 (需要复制 csrftoken 和 LEETCODE_SESSION) 并替换 `config.toml`中的`Cookie`。
+1. In `.gitignore`, add a line `*.toml`
+2. In the `LeetCode-Go` directory, add a text file `config.toml`.
+3. Copy the following content into `config.toml`.
+4. Change `test` in `config.toml` to your leetcode `username` and `password` respectively.
+5. After logging in to leetcode, copy the website cookie (need to copy csrftoken and LEETCODE_SESSION) and
+   replace `Cookie` in `config.toml`.
 
 ```toml
-Username="test"
-Password="test"
-Cookie="csrftoken=XXXXXXXXX; LEETCODE_SESSION=YYYYYYYY;"
-CSRFtoken="ZZZZZZZZ"
+Username = "test"
+Password = "test"
+Cookie = "csrftoken=XXXXXXXXX; LEETCODE_SESSION=YYYYYYYY;"
+CSRFtoken = "ZZZZZZZZ"
 ```
 
-## PDF 生成
+## PDF generation
 
-用 `leetcode-go pdf` 命令先生成书籍内容的合并版本 pdf.md，再用 vscode 或者其他支持 toc 目录生成的工具，生成 toc。最后用 Typora 把 md 文件转换成 pdf。就可以发布 release 新版本了。
+Use the `leetcode-go pdf` command to generate the merged version pdf.md of the book content, and then use vscode or
+other tools that support toc directory generation to generate toc. last use
+Typora converts md files to pdf. You can release a new version.

@@ -8,7 +8,7 @@ weight: 3
 
 ![](https://img.halfrost.com/Leetcode/Two_pointers.png)
 
-- 双指针滑动窗口的经典写法。右指针不断往右移，移动到不能往右移动为止(具体条件根据题目而定)。当右指针到最右边以后，开始挪动左指针，释放窗口左边界。第 3 题，第 76 题，第 209 题，第 424 题，第 438 题，第 567 题，第 713 题，第 763 题，第 845 题，第 881 题，第 904 题，第 978 题，第 992 题，第 1004 题，第 1040 题，第 1052 题。
+- The classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window. Question 3, Question 76, Question 209, Question 424, Question 438, Question 567, Question 713, Question 763, Question 845, Question 881, Question 904, Question 978, Question 992 Question 1004, Question 1040, Question 1052.
 
 ```c
 	left, right := 0, -1
@@ -25,9 +25,9 @@ weight: 3
 	}
 ```
 
-- 快慢指针可以查找重复数字，时间复杂度 O(n)，第 287 题。
-- 替换字母以后，相同字母能出现连续最长的长度。第 424 题。
-- SUM 问题集。第 1 题，第 15 题，第 16 题，第 18 题，第 167 题，第 923 题，第 1074 题。
+- Fast and slow pointers can find repeated numbers, time complexity O(n), question 287.
+- After replacing letters, the same letter can appear for the longest length in a row. Question 424.
+- SUM problem sets. Question 1, Question 15, Question 16, Question 18, Question 167, Question 923, Question 1074.
 
 
 {{.AvailableTagTable}}

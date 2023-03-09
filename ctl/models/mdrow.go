@@ -35,7 +35,7 @@ func GenerateMdRows(solutionIds []int, mdrows []Mdrow) {
 				Frequency:          row.Frequency,
 			}
 		} else {
-			fmt.Printf("序号不存在 len(solutionIds) = %v len(mdrows) = %v len(solutionIds) = %v solutionIds[i] = %v QuestionTitle = %v\n", len(solutionIds), len(mdrows), len(solutionIds), solutionIds[i], mdrows[solutionIds[i]-1].QuestionTitle)
+			fmt.Printf("The serial number does not exist len(solutionIds) = %v len(mdrows) = %v len(solutionIds) = %v solutionIds[i] = %v QuestionTitle = %v\n", len(solutionIds), len(mdrows), len(solutionIds), solutionIds[i], mdrows[solutionIds[i]-1].QuestionTitle)
 		}
 	}
 	for i := range mdrows {
@@ -79,7 +79,7 @@ func (mds Mdrows) table() string {
 	for _, p := range mds.Mdrows {
 		res += p.tableLine()
 	}
-	// 加这一行是为了撑开整个表格
+	// Add this line to expand the entire table
 	res += "|------------|-------------------------------------------------------|-------| ----------------| ---------------|-------------|"
 	return res
 }

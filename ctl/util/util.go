@@ -15,7 +15,7 @@ import (
 // LoadSolutionsDir define
 func LoadSolutionsDir() ([]int, []string, int) {
 	solutionIds, soNames, total := loadFile("../leetcode/")
-	fmt.Printf("读取了 %v 道题的题解，当前目录下有 %v 个文件(可能包含 .DS_Store)，目录中有 %v 道题在尝试中\n", len(solutionIds), total, total-len(solutionIds))
+	fmt.Printf("Read the solutions of %v questions, there are %v files (may include .DS_Store) in the current directory, and %v questions in the directory are trying\n", len(solutionIds), total, total-len(solutionIds))
 	return solutionIds, soNames, total - len(solutionIds)
 }
 
@@ -49,10 +49,10 @@ func GetAllFile(pathname string, fileList *[]string) ([]string, error) {
 	rd, err := ioutil.ReadDir(pathname)
 	for _, fi := range rd {
 		if fi.IsDir() {
-			//fmt.Printf("[%s]\n", pathname+"\\"+fi.Name())
+			// fmt.Printf("[%s]\n", pathname+"\\"+fi.Name())
 			GetAllFile(pathname+fi.Name()+"/", fileList)
 		} else {
-			//fmt.Println(fi.Name())
+			// fmt.Println(fi.Name())
 			*fileList = append(*fileList, fi.Name())
 		}
 	}
@@ -74,12 +74,12 @@ func LoadChapterFourDir() ([]string, []int) {
 				fmt.Println(err)
 			}
 			solutionIds = append(solutionIds, tmp)
-			// len(f.Name())-3 = 文件名去掉 .md 后缀
+			// len(f.Name())-3 = file name without .md suffix
 			solutionsMap[tmp] = f[:len(f)-3]
 		}
 	}
 	sort.Ints(solutionIds)
-	fmt.Printf("读取了第四章的 %v 道题的题解\n", len(solutionIds))
+	fmt.Printf("Read the solutions of %v questions in Chapter 4\n", len(solutionIds))
 	for _, v := range solutionIds {
 		if name, ok := solutionsMap[v]; ok {
 			solutions = append(solutions, name)
@@ -100,7 +100,7 @@ func WriteFile(fileName string, content []byte) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	//fmt.Println("write file successful")
+	// fmt.Println("write file successful")
 }
 
 // LoadFile define

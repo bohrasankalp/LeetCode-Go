@@ -8,12 +8,11 @@ weight: 14
 
 ![](https://img.halfrost.com/Leetcode/Sort.png)
 
-- 深刻的理解多路快排。第 75 题。
-- 链表的排序，插入排序(第 147 题)和归并排序(第 148 题)
-- 桶排序和基数排序。第 164 题。
-- "摆动排序"。第 324 题。
-- 两两不相邻的排序。第 767 题，第 1054 题。
-- "饼子排序"。第 969 题。
-
+- Deep understanding of multi-way quick sort. Question 75.
+- Sorting of linked lists, insertion sort (question 147) and merge sort (question 148)
+- Bucket sort and radix sort. Question 164.
+- "Swing Sort". Question 324.
+- Sorting that is not adjacent to each other. Question 767, question 1054.
+- "Sorting pancakes". Question 969.
 
 {{.AvailableTagTable}}

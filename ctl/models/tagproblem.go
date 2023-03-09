@@ -125,27 +125,27 @@ func standardizedTitle(orig string, frontendQuestionID int32) string {
 	s6 := strings.Replace(s5, ",", "", -1)
 	s7 := strings.Replace(s6, "?", "", -1)
 	count := 0
-	// 去掉 --- 这种情况，这种情况是由于题目标题中包含 - ，左右有空格，左右一填充，造成了 ---，3 个 -
+	// Remove ---In this case, this is because the title of the topic contains -, there are spaces on the left and right, and one padding on the left and right, resulting in ---, 3 -
 	for i := 0; i < len(s7)-2; i++ {
 		if s7[i] == '-' && s7[i+1] == '-' && s7[i+2] == '-' {
-			fmt.Printf("【需要修正 --- 的标题是 %v】\n", fmt.Sprintf("%04d.%v", int(frontendQuestionID), s7))
+			fmt.Printf("[Fix required ---title is %v]\n", fmt.Sprintf("%04d.%v", int(frontendQuestionID), s7))
 			s7 = s7[:i+1] + s7[i+3:]
 			count++
 		}
 	}
 	if count > 0 {
-		fmt.Printf("总共修正了 %v 个标题\n", count)
+		fmt.Printf("A total of %v titles were corrected\n", count)
 	}
-	// 去掉 -- 这种情况，这种情况是由于题目标题中包含负号 -
+	// Remove --In this case, this case is due to the minus sign in the title of the question -
 	for i := 0; i < len(s7)-2; i++ {
 		if s7[i] == '-' && s7[i+1] == '-' {
-			fmt.Printf("【需要修正 -- 的标题是 %v】\n", fmt.Sprintf("%04d.%v", int(frontendQuestionID), s7))
+			fmt.Printf("[Needs fix --title is %v]\n", fmt.Sprintf("%04d.%v", int(frontendQuestionID), s7))
 			s7 = s7[:i+1] + s7[i+2:]
 			count++
 		}
 	}
 	if count > 0 {
-		fmt.Printf("总共修正了 %v 个标题\n", count)
+		fmt.Printf("A total of %v titles were corrected\n", count)
 	}
 	return s7
 }
@@ -188,7 +188,7 @@ func (tls TagLists) table() string {
 	for _, p := range tls.TagLists {
 		res += p.tableLine()
 	}
-	// 加这一行是为了撑开整个表格
+	// Add this line to expand the entire table
 	res += "|------------|-------------------------------------------------------|-------| ----------------| ---------------|-------------|-------------|-------------|"
 	return res
 }
