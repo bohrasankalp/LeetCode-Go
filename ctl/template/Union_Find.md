@@ -7,14 +7,12 @@ weight: 16
 # Union Find
 
 ![](https://img.halfrost.com/Leetcode/Union_Find.png)
-
-- 灵活使用并查集的思想，熟练掌握并查集的[模板]({{< relref "/ChapterThree/UnionFind.md" >}})，模板中有两种并查集的实现方式，一种是路径压缩 + 秩优化的版本，另外一种是计算每个集合中元素的个数 + 最大集合元素个数的版本，这两种版本都有各自使用的地方。能使用第一类并查集模板的题目有：第 128 题，第 130 题，第 547 题，第 684 题，第 721 题，第 765 题，第 778 题，第 839 题，第 924 题，第 928 题，第 947 题，第 952 题，第 959 题，第 990 题。能使用第二类并查集模板的题目有：第 803 题，第 952 题。第 803 题秩优化和统计集合个数这些地方会卡时间，如果不优化，会 TLE。
-- 并查集是一种思想，有些题需要灵活使用这种思想，而不是死套模板，如第 399 题，这一题是 stringUnionFind，利用并查集思想实现的。这里每个节点是基于字符串和 map 的，而不是单纯的用 int 节点编号实现的。
-- 有些题死套模板反而做不出来，比如第 685 题，这一题不能路径压缩和秩优化，因为题目中涉及到有向图，需要知道节点的前驱节点，如果路径压缩了，这一题就没法做了。这一题不需要路径压缩和秩优化。
-- 灵活的抽象题目给的信息，将给定的信息合理的编号，使用并查集解题，并用 map 降低时间复杂度，如第 721 题，第 959 题。
-- 关于地图，砖块，网格的题目，可以新建一个特殊节点，将四周边缘的砖块或者网格都 union() 到这个特殊节点上。第 130 题，第 803 题。
-- 能用并查集的题目，一般也可以用 DFS 和 BFS 解答，只不过时间复杂度会高一点。
-
+- Use the idea of ​​union search flexibly, master the [template]({{< relref "/ChapterThree/UnionFind.md" >}}) of union search, there are two ways to realize union search in the template, one It is the version of path compression + rank optimization, and the other is the version of calculating the number of elements in each set + the maximum number of elements in the set. These two versions have their respective uses. The questions that can use the first type of union search template are: question 128, question 130, question 547, question 684, question 721, question 765, question 778, question 839, question 924, question Question 928, Question 947, Question 952, Question 959, Question 990. The questions that can use the second type of union search template are: question 803 and question 952. Question 803 Rank optimization and the number of statistical collections will be time-consuming. If not optimized, it will be TLE.
+- Union search is an idea, some questions need to use this idea flexibly, instead of a dead set template, such as question 399, this question is stringUnionFind, which is realized by using the idea of ​​union search. Each node here is based on strings and maps, rather than simply using int node numbers.
+- Some questions can’t be done with a dead set template, such as question 685. This question cannot be path compressed and rank optimized, because the question involves a directed graph, and it is necessary to know the predecessor node of the node. If the path is compressed, this question There is no way to do it. This question does not require path compression and rank optimization.
+- The information given by the flexible abstract topic, number the given information reasonably, use and search to solve the problem, and use map to reduce the time complexity, such as the 721st question and the 959th question.
+- Regarding the topic of maps, bricks, and grids, you can create a special node, and union() the bricks or grids around the edges to this special node. Question 130, question 803.
+- Questions that can be used for union search can generally be solved with DFS and BFS, but the time complexity will be higher.
 
 
 {{.AvailableTagTable}}

@@ -1,95 +1,86 @@
 ---
-title: 第一章 序章
+title: Chapter 1 Prologue
 type: docs
 weight: 1
 ---
 
-# 第一章 序章
+# Chapter 1 Prologue
 
 {{< columns >}}
-## 关于 LeetCode
+## About LeetCode
 
-说到 LeetCode，作为一个程序员来说，应该不陌生，近几年参加面试都会提到它。国内外的程序员用它刷题主要是为了面试。据历史记载，这个网站 2011 年就成立了，马上就要到自己 10 周年的生日了。每周举行周赛，双周赛，月赛，在有限时间内编码，确实非常能考验人的算法能力。一些大公司赞助冠名的比赛获得前几名除了有奖品，还能直接拿到内推的机会。
+Speaking of LeetCode, as a programmer, you should be familiar with it, and it will be mentioned in interviews in recent years. Programmers at home and abroad use it to brush questions mainly for interviews. According to historical records, this website was established in 2011, and it is about to reach its 10th birthday. Weekly competitions, biweekly competitions, and monthly competitions are held every week, and coding within a limited time is really a test of people's algorithmic ability. In addition to prizes for the top few winners of some big companies sponsoring title competitions, they can also directly get the opportunity to be promoted internally.
 
 <--->
 
-## 什么是 Cookbook
+## What is Cookbook
 
-直译的话就是烹饪书，教你做各种食谱美食的书。经常看 O'Reilly 技术书的同学对这个名词会很熟悉。一般动手操作，实践类的书都会有这个名字。
+The literal translation is a cookbook, a book that teaches you to make various recipes and delicacies. Students who often read O'Reilly technical books will be familiar with this term. Generally hands-on, practical books will have this name.
 
 {{< /columns >}}
 
 <img src="https://books.halfrost.com/leetcode/logo.png" alt="logo" height="600" align="right" style="padding-left: 30px;"/>
+## Why did you write this open source book
 
-## 为什么会写这个开源书
+The author has been brushing the questions for a year, and I want to share with you some experience in doing the questions and methods of solving the questions. I want to make friends with people who have the same hobbies, and exchange and study together. For myself, writing problem solutions is also an improvement. Telling a esoteric topic to someone who has no idea at all, and allowing him to fully understand it, can exercise people's ability to express. During the explanation, you may also encounter some questions from the listeners. These questions may be your own knowledge loopholes, and you are forced to make up for them. The author has done relevant sharing in the company, and I feel deeply, and both parties benefited.
 
-笔者刷题刷了一年了，想和大家分享分享一些做题心得，解题方法。想和有相同爱好的人交个朋友，一起交流学习。对于自己来说，写题解也是一种提高。把一道深奥的题目讲给一点都没有头绪的人，并能让他完全听懂，很能锻炼人的表达能力。在讲解中很可能还会遇到听者的一些提问，这些问题可能是自己的知识漏洞，强迫自己去弥补。笔者在公司做过相关的分享，感受很深，双方受益都还不错。
-
-> 另外，在大学期间，笔者做题的时候最讨厌写题解，感觉是浪费时间，用更多的时间去做更多的题。现在不知道算不算是“出来混的，总是要还的”。
-
-
-## 关于书的封面
-
-常看 O'Reilly 动物书的同学一看这个封面就知道是向他们致敬。确实是这个目的。O'Reilly 的封面动物都是稀缺动物，并且画风都是黑白素描风。这些动物都有版权了，所以只能在网上找没有版权的黑白素描风的图片。常见的能找到 40 张这种风格的图片。不过用的人太多了，笔者费劲的找了其他几张这种图片，这张孔雀开屏是其中一张。孔雀开屏的意义是希望大家刷完 LeetCode 以后，提高了自身的算法能力，在人生的舞台上开出自己的“屏”。全书配色也都是绿色，因为这是 AC 的颜色。
+> In addition, when I was in college, I hated writing problem solutions the most when I was doing questions. I felt that it was a waste of time and spent more time doing more questions. Now I don't know if it counts as "you have to pay back if you come out to mess around".
 
 
-## 关于作者
+## About the book cover
+Students who often read O'Reilly's animal books know that this cover is a tribute to them. It is indeed for this purpose. O'Reilly's cover animals are all rare animals, and the style of painting is black and white sketch style. These animals are all copyrighted, so I can only find black-and-white sketch-style pictures without copyright on the Internet. It is common to find 40 images in this style. However, there are too many people using it, and the author struggled to find several other pictures of this kind, and this peacock with its tail open is one of them. The meaning of Peacock Open Screen is to hope that after finishing LeetCode, everyone can improve their algorithmic ability and open their own "screen" on the stage of life. The color scheme of the whole book is also green, because this is the color of AC.
 
-笔者是一个刚刚入行一年半的 gopher 新人，还请各位大佬多多指点小弟我。大学参加了 3 年 ACM-ICPC，但是由于资质不高，没有拿到一块金牌。所以在算法方面，我对自己的评价算是新手吧。参加 ACM-ICPC 最大的收获是训练了思维能力，这种能力也会运用到生活中。其次是认识了很多国内很聪明的选手，看到了自己和他们的差距。最后，就是那 200 多页，有些自己都没有完全理解的，打印的密密麻麻的[算法模板](https://github.com/halfrost/leetcode-go/releases/tag/Special)。知识学会了，终身都是自己的，没有学会，那些知识都是身外之物。
 
-笔者从 2019 年 3 月 25 号开始刷题，到 2020 年 3 月 25 号，整整一年的时间。原计划是每天一题。实际上每天有时候不止一题，最终完成了 600+：
+## About the author
+The author is a gopher newcomer who has just been in the industry for a year and a half. Please give me some advice. The university participated in ACM-ICPC for 3 years, but did not get a gold medal due to low qualifications. So in terms of algorithms, I'm a novice in my own evaluation. The biggest gain from participating in ACM-ICPC is to train thinking ability, which will also be used in life. Secondly, I got to know many very smart players in China and saw the gap between myself and them. Finally, there are more than 200 pages, some of which I did not fully understand, and the densely printed [algorithm template](https://github.com/halfrost/leetcode-go/releases/tag/Special). If you learn knowledge, you will own it for life. If you don't learn it, that knowledge is something outside your body.
+
+The author started writing questions from March 25, 2019 to March 25, 2020, a whole year. The original plan was one question per day. In fact, there are sometimes more than one question every day, and finally completed 600+:
 
 ![](https://img.halfrost.com/Blog/ArticleImage/2019_leetcode.png)
+> A warm reminder: The author thought that doing one question every day would make the submissions picture all green, but I found out that I was wrong. If you also want to insist and make this picture all green, you must pay attention to the following issues: LeetCode server is in +0 time zone, and this picture is also calculated according to this time zone. In other words, before 8 o'clock in the morning in China, the previous day is counted! It is also because of the time zone that I left these 22 grids blank. For example, there is a hard question that is difficult, and there is a lot of work that day, and it will not be until the next morning when I come home from get off work at night and figure it out. So do another question as the next day's amount. It turns out that these 2 questions are counted as the previous day. Sometimes the author gets up at 6 o'clock in the morning to brush up the questions, and the submission is also the day before.
+>
+> (Of course, these are all in the past, they are not important anymore, they are just some small episodes on the road of struggle)
 
-> 一个温馨提示：笔者本以为每天做一题，会让这个 submissions 图全绿，但是我发现我错了。如果你也想坚持，让这个图全绿，一定要注意以下的问题：LeetCode 服务器是在 +0 时区的，这个图也是按照这个时区计算的。也就是说，中国每天早上 8 点之前，是算前一天的！也是因为时区的问题，导致我空白了这 22 个格子。比如有一道 Hard 题很难，当天工作也很多，晚上下班回家想出来了就到第二天凌晨了。于是再做一题当做第二天的量。结果会发现这 2 题都算前一天的。有时候笔者早上 6 点起床刷题，提交以后也都是前一天的。
-> 
-> (当然这些都是过去了，不重要了，全当是奋斗路上的一些小插曲)
+In 2020, the author will definitely continue to write questions, because some of my goals have not been achieved yet. You may work towards 1000 questions, or you may go back and start doing the second or third time when you reach 800 questions. (Don't give up if you don't reach your goal~)
 
-2020 年笔者肯定还会继续刷题，因为还没有达到自己的一些目标。可能会朝着 1000 题奋进，也有可能刷到 800 题的时候回头开始二刷，三刷。(不达目的不罢休吧~)
+## About the code in the book
+The codes are all placed in [github repo](https://github.com/halfrost/leetcode-go/tree/master/leetcode), and the questions can be searched by question number.
+The code for the title of this book has been beats 100%. If there is no beats 100% solution, it will not be included in this book. The author will continue to optimize those topics to 100% before putting them in.
 
-## 关于书中的代码
+Readers may ask, why pursue beats 100%. The author thinks that optimizing to 100% beats can be regarded as a feeling for this question. There are several Hard questions, and the author used brute force to solve AC, and then only beats 5%. This question is like not doing it. And if such an answer is given during the interview, the interviewer will not be satisfied, "Is there a better solution?". If you can give a better solution through your own thinking, the interviewer will be more satisfied.
 
-代码都放在 [github repo](https://github.com/halfrost/leetcode-go/tree/master/leetcode) 中，按题号可以搜索到题目。
-本书题目的代码都已经 beats 100% 了。没有 beats 100% 题解就没有放到本书中了。那些题目笔者会继续优化到 100% 再放进来。
+LeetCode statistics code runtime will fluctuate, the same code submitted 10 times may beats 100%. The author didn't find this problem at first, and I submitted many questions with the correct code many times in a row, submitting 3400+ times a year, which caused my correct rate to become extremely high. 😢
+Of course, if there are other more elegant solutions that can beat 100%, welcome to submit a PR, and the author will learn with everyone.
 
-有可能读者会问，为何要追求 beats 100%。笔者认为优化到 beats 100% 才算是把这题做出感觉了。有好几道 Hard 题，笔者都用暴力解法 AC 了，然后只 beats 了 5%。这题就如同没做一样。而且面试中如果给了这样的答案，面试官也不会满意，“还有没有更优解？”。如果通过自己的思考能给出更优解，面试官会更满意一些。
+## target audience
 
-LeetCode 统计代码运行时长会有波动的，相同的代码提交 10 次可能就会 beats 100% 了。笔者开始没有发现这个问题，很多题用正确的代码连续交了很多次，一年提交 3400+ 次，导致我的正确率也变的奇高。😢
+Programming enthusiasts who want to improve their algorithmic ability through LeetCode.
 
-当然，如果还有其他更优美的解法，也能 beats 100% 的，欢迎提交 PR，笔者和大家一起学习。
+## Programming language
 
-## 目标读者
-
-想通过 LeetCode 提高算法能力的编程爱好者。
-
-
-## 编程语言
-
-本书的算法全部用 Go 语言实现。
+The algorithms in this book are all implemented in Go language.
 
 
-## 使用说明
+## Instructions for use
 
-- 本电子书的左上角有搜索栏，可以迅速帮你找到你想看的章节和题号。
-- 本电子书每页都接入了 Gitalk，每一页的最下方都有评论框可以评论，如果没有显示出来，请检查自己的网络。
-- 关于题解，笔者建议这样使用：先自己读题，思考如何解题。如果 15 分钟还没有思路，那么先看笔者的解题思路，但是不要看代码。有思路以后自己用代码实现一遍。如果完全不会写，那就看笔者提供的代码，找出自己到底哪里不会写，找出问题记下来，这就是自己要弥补的知识漏洞。如果自己实现出来了，提交以后有错误，自己先 debug。AC 以后没有到 100% 也先自己思考如何优化。如果每道题自己都能优化到 100% 了，那么一段时间以后进步会很大。所以总的来说，实在没思路，看解题思路；实在优化不到 100%，看看代码。
+-There is a search bar in the upper left corner of this e-book, which can quickly help you find the chapter and question number you want to read.
+-Each page of this e-book is connected to Gitalk, and there is a comment box at the bottom of each page for comments. If it is not displayed, please check your own network.
+-Regarding the problem solution, the author recommends using it in this way: first read the problem by yourself, and think about how to solve the problem. If you don't have an idea in 15 minutes, then look at the author's problem-solving ideas first, but don't look at the code. After you have an idea, you can implement it with code yourself. If you can't write at all, then look at the code provided by the author, find out where you can't write, find out the problem and write it down, this is the knowledge gap that you want to make up for. If you realize it by yourself and there is an error after submission, you should debug it yourself first. Before AC reaches 100% in the future, I will first think about how to optimize it. If each question can be optimized to 100%, then the improvement will be great after a period of time. So in general, if you really have no idea, look at the problem-solving ideas; if you really can’t optimize 100%, look at the code.
 
-## 互动与勘误
+## Interaction and Errata
 
-如果书中文章有所遗漏，欢迎点击所在页面下边的 edit 按钮进行评论和互动，感谢您的支持与帮助。
+If there are any missing articles in the book, please click the edit button at the bottom of the page to comment and interact. Thank you for your support and help.
 
-## 最后
+## at last
 
-一起开始刷题吧~
-
+Let's start brushing questions together~
 ![](https://img.halfrost.com/Blog/ArticleImage/hello_leetcode.png)
 
-本作品采用 [知识署名-非商业性使用-禁止演绎 （BY-NC-ND） 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.zh-Hans) 进行许可。
+This work adopts [Intellectual Attribution-Non-Commercial Use-No Derivatives (BY-NC-ND) 4.0 International License Agreement](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.zh-Hans ) for permission.
 
 
-题解里面的所有题目版权均归 [LeetCode](https://leetcode.com/) 和 [力扣中国](https://leetcode-cn.com/) 所有
 
 
 ----------------------------------------------
-<p align = "right"><a href="https://books.halfrost.com/leetcode/ChapterOne/Data_Structure/">下一页➡️</a></p>
+<p align = "right"><a href="https://books.halfrost.com/leetcode/ChapterOne/Data_Structure/">next page➡️</a></p>
 

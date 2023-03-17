@@ -1,36 +1,35 @@
 ---
-title: 1.3 时间复杂度
+title: 1.3 Time Complexity
 type: docs
 weight: 3
 ---
+# time complexity and space complexity
 
-# 时间复杂度和空间复杂度
 
+## 1. Time complexity data scale
 
-## 一. 时间复杂度数据规模
+The data size that can solve the problem within 1s: 10^6 ~ 10^7
 
-1s 内能解决问题的数据规模：10^6 ~ 10^7
+-O(n^2) algorithm can handle data scale of 10^4 level (conservative estimate, it is definitely no problem to deal with 1000 level problems)
+-O(n) algorithm can handle data scale of 10^8 level (conservative estimate, it is definitely no problem to deal with 10^7 level problems)
+-O(nlog n) algorithm can handle data scale of 10^7 level (conservative estimate, it is definitely no problem to deal with 10^6 level problems)
 
-- O(n^2) 算法可以处理 10^4 级别的数据规模(保守估计，处理 1000 级别的问题肯定没问题)
-- O(n) 算法可以处理 10^8 级别的数据规模(保守估计，处理 10^7 级别的问题肯定没问题)
-- O(nlog n) 算法可以处理 10^7 级别的数据规模(保守估计，处理 10^6 级别的问题肯定没问题)
-
-| | 数据规模|时间复杂度 | 算法举例|
+| | Data size|Time complexity | Algorithm example|
 |:------:|:------:|:------:|:------:|
-|1|10|O(n!)|permutation 排列|
-|2|20~30|O(2^n)|combination 组合|
-|3|50|O(n^4)|DFS 搜索、DP 动态规划|
-|4|100|O(n^3)|任意两点最短路径、DP 动态规划|
-|5|1000|O(n^2)|稠密图、DP 动态规划|
-|6|10^6|O(nlog n)|排序，堆，递归与分治|
-|7|10^7|O(n)|DP 动态规划、图遍历、拓扑排序、树遍历|
-|8|10^9|O(sqrt(n))|筛素数、求平方根|
-|9|10^10|O(log n)|二分搜索|
-|10|+∞|O(1)|数学相关算法|
-|------------------------------|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|
+|1|10|O(n!)|permutation permutation|
+|2|20~30|O(2^n)|combination combination|
+|3|50|O(n^4)|DFS search, DP dynamic programming|
+|4|100|O(n^3)|The shortest path between any two points, DP dynamic programming|
+|5|1000|O(n^2)|Dense graph, DP dynamic programming|
+|6|10^6|O(nlog n)|sorting, heap, recursion and divide and conquer|
+|7|10^7|O(n)|DP dynamic programming, graph traversal, topological sorting, tree traversal|
+|8|10^9|O(sqrt(n))|Sieve prime numbers, find square root|
+|9|10^10|O(log n)|Binary Search|
+|10|+∞|O(1)|Mathematics-related algorithms|
+|------------------------------|------------------------------|------------------------------------------------------------------|-------------------------------------------------------------------|
 
 
-一些具有迷惑性的例子：
+Some deceptive examples:
 
 ```c
 void hello (int n){
@@ -40,28 +39,27 @@ void hello (int n){
 }
 ```
 
-上面这段代码的时间复杂度是 O(nlog n) 而不是 O(n^2)
+The time complexity of the above code is O(nlog n) instead of O(n^2)
 
 ```c
-bool isPrime (int n){
-    for( int x = 2 ; x * x <= n ; x ++ )
+bool isPrime(int n){
+for( int x = 2 ; x *x <= n ; x ++ )
         if( n % x == 0 )
             return false;
     return true;
 }
 ```
 
-上面这段代码的时间复杂度是 O(sqrt(n)) 而不是 O(n)。
+The time complexity of the above code is O(sqrt(n)) instead of O(n).
 
-再举一个例子，有一个字符串数组，将数组中的每一个字符串按照字母序排序，之后再将整个字符串数组按照字典序排序。两步操作的整体时间复杂度是多少呢？
+To give another example, there is an array of strings, sort each string in the array alphabetically, and then sort the entire string array lexicographically. What is the overall time complexity of the two-step operation?
 
-如果回答是 O(n*nlog n + nlog n) = O(n^2log n)，这个答案是错误的。字符串的长度和数组的长度是没有关系的，所以这两个变量应该单独计算。假设最长的字符串长度为 s，数组中有 n 个字符串。对每个字符串排序的时间复杂度是 O(slog s)，将数组中每个字符串都按照字母序排序的时间复杂度是 O(n * slog s)。
+If the answer is O(n*nlog n + nlog n) = O(n^2log n), the answer is wrong. The length of the string and the length of the array are irrelevant, so these two variables should be calculated separately. Suppose the longest string has length s and there are n strings in the array. The time complexity of sorting each string is O(slog s), and the time complexity of sorting each string in alphabetical order in the array is O(n *slog s).
+The time complexity of sorting the entire string array lexicographically is O(s *nlog n). O(nlog n) in the sorting algorithm is the number of comparisons. Since the comparison is an integer number, each comparison is O(1). But strings are compared lexicographically, and the time complexity is O(s). So the time complexity of sorting an array of strings lexicographically is O(s *nlog n). So the overall complexity is O(n *slog s) + O(s *nlog n) = O(n\*slog s + s\*nlogn) = O(n\*s\*(log s + log n) ) = O(n\*s\*log(n\*s)).
 
-将整个字符串数组按照字典序排序的时间复杂度是 O(s * nlog n)。排序算法中的 O(nlog n) 是比较的次数，由于比较的是整型数字，所以每次比较是 O(1)。但是字符串按照字典序比较，时间复杂度是 O(s)。所以字符串数组按照字典序排序的时间复杂度是 O(s * nlog n)。所以整体复杂度是 O(n * slog s) + O(s * nlog n) = O(n\*slog s + s\*nlogn) = O(n\*s\*(log s + log n)) = O(n\*s\*log(n\*s)）。
+## Two. Space complexity
 
-## 二. 空间复杂度
-
-递归调用是有空间代价的，递归算法需要保存递归栈信息，所以花费的空间复杂度会比非递归算法要高。
+The recursive call has a space cost, and the recursive algorithm needs to save the recursive stack information, so the space complexity spent will be higher than that of the non-recursive algorithm.
 
 ```c
 int sum( int n ){
@@ -73,66 +71,63 @@ int sum( int n ){
 }
 ```
 
-上面算法的时间复杂度为 O(n)，空间复杂度 O(1)。
+The time complexity of the above algorithm is O(n), and the space complexity is O(1).
 
 ```c
 int sum( int n ){
     assert( n >= 0 )
     if ( n == 0 )
         return 0;
-    return n + sum( n - 1 );
+    return n + sum( n -1 );
 }
 ```
 
-上面算法的时间复杂度为 O(n)，空间复杂度 O(n)。
+The time complexity of the above algorithm is O(n), and the space complexity is O(n).
 
-## 三. 递归的时间复杂度
+## 3. Time complexity of recursion
 
-### 1. 只有一次递归调用
+### 1. Only one recursive call
 
-如果递归函数中，只进行了一次递归调用，且递归深度为 depth，在每个递归函数中，时间复杂度为 T，那么总体的时间复杂度为 O(T * depth)
+If only one recursive call is made in the recursive function, and the recursive depth is depth, and in each recursive function, the time complexity is T, then the overall time complexity is O(T *depth)
 
-举个例子：
+for example:
 
 ```c
 int binarySearch(int arr[], int l, int r, int target){
-	if( l > r )
-	    return -1;
-    int mid = l + ( r - l ) / 2; // 防溢出
+if( l > r )
+return -1;
+    int mid = l + ( r -l ) /2; //prevent overflow
     if(arr[mid] == target)
         return mid;
     else if (arr[mid] > target)
-        return binarySearch(arr,l,mid-1,target);
+return binarySearch(arr,l,mid-1,target);
     else
-        return binarySearch(arr,mid+1,r,target);
+        return binarySearch(arr, mid+1, r, target);
 }
 
 ```
 
-在二分查找的递归实现中，只递归调用了自身。递归深度是 log n ，每次递归里面的复杂度是 O(1) 的，所以二分查找的递归实现的时间复杂度为 O(log n) 的。
+In the recursive implementation of binary search, only itself is called recursively. The recursion depth is log n, and the complexity of each recursion is O(1), so the time complexity of the recursive implementation of binary search is O(log n).
 
 
-### 2. 只有多次递归调用
+### 2. Only multiple recursive calls
 
-针对多次递归调用的情况，就需要看它的计算调用的次数了。通常可以画一颗递归树来看。举例：
+For the case of multiple recursive calls, you need to look at the number of times it is calculated and called. Usually you can draw a recursive tree to see. Example:
 
 ```c
 int f(int n){
     assert( n >= 0 );
     if( n == 0 )
         return 1;
-    return f( n - 1 ) + f ( n - 1 );
+    return f( n -1 ) + f ( n -1 );
 }
 ```
 
-上述这次递归调用的次数为 2^0^ + 2^1^ + 2^2^ + …… + 2^n^ = 2^n+1^ - 1 = O(2^n)
-
-
-> 关于更加复杂的递归的复杂度分析，请参考主定理。主定理中针对各种复杂情况都给出了正确的结论。
+The number of recursive calls above is 2^0^ + 2^1^ + 2^2^ + ... + 2^n^ = 2^n+1^ -1 = O(2^n)
 
 
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Algorithm/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/">下一章➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Algorithm/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/">next chapter➡️</a></p>
 </div>

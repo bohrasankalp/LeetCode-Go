@@ -18,8 +18,9 @@ weight: 4
 让我们在题解的太空遨游吧~
 
 
+
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LFUCache/">⬅️上一章</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0001.Two-Sum/">下一页➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LFUCache/">⬅️previous chapter</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterFour/0001~0099/0001.Two-Sum/">Next page ➡️</a></p>
 </div>

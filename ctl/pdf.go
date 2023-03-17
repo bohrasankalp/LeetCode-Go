@@ -22,13 +22,12 @@ var (
 	pdfPreface   = `<img src="https://books.halfrost.com/leetcode/logo.png" alt="logo" heigth="1300px" align="center"/>
 
 
-# 说明
+# illustrate
 	
-此版本是 https://books.halfrost.com/leetcode 网页的离线版，由于网页版实时会更新，所以此 PDF 版难免会有一些排版或者错别字。如果读者遇到了，可以到网页版相应页面，点击页面 edit 按钮，提交 pr 进行更改。此 PDF 版本号是 V%v.%v.%v。PDF 永久更新地址是 https://github.com/halfrost/leetcode-go/releases/，以版本号区分不同版本。笔者还是强烈推荐看在线版，有任何错误都会立即更新。如果觉得此书对刷题有一点点帮助，可以给此书点一个 star，鼓励一下笔者早点更新更多题解。
+This version is an offline version of the https://books.halfrost.com/leetcode webpage. Since the webpage version will be updated in real time, there will inevitably be some typos or typos in this PDF version. If readers encounter it, they can go to the corresponding page of the web version, click the page edit button, and submit pr to make changes. The version number of this PDF is V%v.%v.%v. The PDF permanent update address is https://github.com/halfrost/leetcode-go/releases/, different versions are distinguished by version number. The author still strongly recommends watching the online version, and will update it immediately if there are any errors. If you feel that this book is a little bit helpful for solving the questions, you can give this book a star and encourage the author to update more question solutions earlier.
+> Version number description, V%v.%v.%v, %v is the major version number, %v means that there are hundreds of questions in the current solution, currently there are %v questions, so the second version number is %v,% v means that there are dozens of questions in the current solution, currently it is %v questions, so the third version number is %v.
 	
-> 版本号说明，V%v.%v.%v，%v 是大版本号，%v 代表当前题解中有几百题，目前是 %v 题，所以第二个版本号是 %v，%v 代表当前题解中有几十题，目前是 %v 题，所以第三个版本号是 %v 。
-	
-# 目录
+# Table of contents
 	
 [toc]
 

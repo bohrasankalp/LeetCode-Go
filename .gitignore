@@ -1,2 +1,8 @@
 *.toml
 .idea
+resources/
+public/
+.hugo_build.lock
+
+ctl/__debug_bin.exe
+.vscode/

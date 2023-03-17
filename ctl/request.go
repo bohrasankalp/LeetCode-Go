@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 
 	"github.com/mozillazg/request"
 )
+
+var debug = true
 
 const (
 	// AllProblemURL define
@@ -75,7 +78,13 @@ type Variables struct {
 	slug string
 }
 
-func getQraphql(payload string) []byte {
+func getQraphql(payload, tag string) []byte {
+	data, err := os.ReadFile(fmt.Sprintf("../tmp/%s-graphql.json", tag))
+	// if our program was unable to read the file
+	// print out the reason why it can't
+	if err == nil {
+		return data
+	}
 	req := newReq()
 	resp, err := req.PostForm(QraphqlURL, bytes.NewBuffer([]byte(payload)))
 	if err != nil {
@@ -92,6 +101,10 @@ func getQraphql(payload string) []byte {
 	if resp.StatusCode == 200 {
 		fmt.Println("Get problem Success!")
 	}
+
+	if err := os.WriteFile(fmt.Sprintf("../tmp/%s-graphql.json", tag), body, 0666); err != nil {
+		fmt.Printf("getRaw: Write to temp Error: " + err.Error())
+	}
 	return body
 }
 
@@ -106,5 +119,5 @@ func getTopicTag(variable string) string {
 }
 
 func getTagProblemList(tag string) []byte {
-	return getQraphql(getTopicTag(tag))
+	return getQraphql(getTopicTag(tag), tag)
 }

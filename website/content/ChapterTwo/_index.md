@@ -1,10 +1,10 @@
 ---
-title: 第二章 算法专题
+title: Chapter 2 Algorithms Topics
 type: docs
 weight: 2
 ---
 
-# 第二章 算法专题
+# Chapter 2 Algorithm Topics
 
 <p align='center'>
 <img src='https://img.halfrost.com/Leetcode/GO_LEARN_.png'>
@@ -13,17 +13,16 @@ weight: 2
 
 
 
-本来天真的认为，把 LeetCode 所有题都完整刷一遍，就可以完整这本书了。经过事实证明，确实是天真了。因为 LeetCode 每天都会增加新题，有时候工作忙了，刷题进度就完全追不上题目更新的速度了。而且以我当前的刷题速度，一年才完成 500+，一年 LeetCode 也会更新 400+ 多题，要起码 5~10 年才能把所有的题目刷完。时间太长了。所以先给自己定了一个小目标，500 题就先把书写出来，总结这个阶段的刷题心得，和大家一起交流。要想把 LeetCode 所有题目都刷完，看来这本书要迭代 5 ~ 10 个版本了(一年迭代一版)。
+I naively thought that if I read all the LeetCode questions completely, I would be able to complete this book. Facts have proved that it is indeed naive. Because LeetCode adds new questions every day, sometimes the work is busy, and the progress of brushing the questions can't keep up with the speed of updating the questions. And with my current speed of brushing questions, I only complete 500+ questions a year, and LeetCode will update 400+ questions a year. It will take at least 5 to 10 years to finish all the questions. It's too long. So first set a small goal for yourself, write out 500 questions first, summarize the experience of brushing the questions at this stage, and communicate with everyone. If you want to finish all the topics of LeetCode, it seems that this book will have to iterate 5 to 10 versions (one version per year).
+Then this chapter sorts out all the topics that have been brushed up. Questions with similar routines are put together. If you want to have a quick interview, in fact, you can do 2 or 3 of the same questions. When you are very proficient in the same type of questions, it is useless to do a few more questions.
 
-那么这一章就把已经刷完了的专题都整理一遍。有相似套路的题目都放在一起，如果想快速面试的话，其实相同的题目刷 2，3 道就可以了。相同类型的题目非常熟练的情况下，再多刷几道也是做无用功。
+So far, the author thinks that dynamic programming is the most flexible type. There is no template for this type of topic to apply to you, and it is also the elegance of the algorithm. The author thinks it is not an exaggeration to call it the art of algorithms. The author has not finished brushing up the type of dynamic programming, only a part of it, and I am still learning.
 
-做到目前为止，笔者认为动态规划是最灵活的类型，这类题目没有一个模板可以给你套用，它也是算法之优雅的地方。笔者认为称它为算法的艺术不为过。动态规划这类型，笔者也还没有刷完，只刷了一部分，还在学习中。
-
-那么就分享一下笔者目前刷过的题，和有相似点的题目吧。
+Then let me share the questions that the author has done so far, and the questions with similarities.
 
 
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Time_Complexity/">⬅️上一章</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/Array/">下一页➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Time_Complexity/">⬅️previous chapter</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/Array/">next page➡️</a></p>
 </div>

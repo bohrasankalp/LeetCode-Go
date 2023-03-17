@@ -8,17 +8,13 @@ weight: 4
 
 ![](https://img.halfrost.com/Leetcode/Linked_List.png)
 
-
-- 巧妙的构造虚拟头结点。可以使遍历处理逻辑更加统一。
-- 灵活使用递归。构造递归条件，使用递归可以巧妙的解题。不过需要注意有些题目不能使用递归，因为递归深度太深会导致超时和栈溢出。
-- 链表区间逆序。第 92 题。
-- 链表寻找中间节点。第 876 题。链表寻找倒数第 n 个节点。第 19 题。只需要一次遍历就可以得到答案。
-- 合并 K 个有序链表。第 21 题，第 23 题。
-- 链表归类。第 86 题，第 328 题。
-- 链表排序，时间复杂度要求 O(n * log n)，空间复杂度 O(1)。只有一种做法，归并排序，至顶向下归并。第 148 题。
-- 判断链表是否存在环，如果有环，输出环的交叉点的下标；判断 2 个链表是否有交叉点，如果有交叉点，输出交叉点。第 141 题，第 142 题，第 160 题。
-
-
-
+-   Clever construction of virtual head nodes. The traversal processing logic can be made more unified.
+-   Flexible use of recursion. Construct recursive conditions, and use recursion to solve problems cleverly. However, it should be noted that some topics cannot use recursion, because too deep recursion will cause timeout and stack overflow.
+-   The reverse order of the range of the linked list. Question 92.
+-   The linked list finds the middle node. Question 876. The linked list finds the nth last node. Question 19. It only takes one traversal to get the answer.
+-   Merge K ordered linked lists. Question 21, question 23.
+-   Linked list sorting. Question 86, question 328.
+-   Linked list sorting requires O(n \*log n) time complexity and O(1) space complexity. There is only one method, merge sort, and merge from top to bottom. Question 148.
+-   Judging whether there is a ring in the linked list, if there is a ring, output the subscript of the intersection point of the ring; judge whether there is an intersection point in the two linked lists, and output the intersection point if there is an intersection point. Question 141, question 142, question 160.
 
 {{.AvailableTagTable}}

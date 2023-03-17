@@ -273,8 +273,9 @@ func (this *LRUCache) Remove(node *Node) {
 ```
 
 
+
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/UnionFind/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LFUCache/">下一页➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/UnionFind/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LFUCache/">next page➡️</a></p>
 </div>

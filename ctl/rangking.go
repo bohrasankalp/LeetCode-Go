@@ -6,13 +6,13 @@ import (
 	"strings"
 )
 
-// getRanking 让这个方法优雅一点
+// getRanking makes this method more elegant
 func getRanking() int {
-	// 获取网页数据
+	// Get web page data
 	URL := fmt.Sprintf("https://leetcode.com/%s/", getConfig().Username)
 	data := getRaw(URL)
 	str := string(data)
-	// 通过不断裁剪 str 获取排名信息
+	// Obtain ranking information by continuously cutting str
 	fmt.Println(str)
 	i := strings.Index(str, "ng-init")
 	j := i + strings.Index(str[i:], "ng-cloak")
@@ -30,7 +30,7 @@ func getRanking() int {
 	str = str[i+1 : j]
 	r, err := strconv.Atoi(str)
 	if err != nil {
-		fmt.Printf("无法把 %s 转换成数字Ranking", str)
+		fmt.Printf("Unable to convert %s to numeric Ranking", str)
 	}
 	return r
 }

@@ -1,54 +1,75 @@
-# 《算法图解》笔记
+# "Algorithm Diagram" Notes
 
 <p align='center'>
 <img src='https://img.halfrost.com/Blog/ArticleTitleImage/Grokking_Algorithms_cover.png'>
 </p>
 
-- 仅当列表是有序的时候，二分查找才管用
-- 大 O 表示法指出了算法运行时间的**增速**
-- 算法运行时间是从其增速的角度度量的
+-   binary search only works if the list is sorted
 
-> Leigh Caldwell 在 Stack Overflow 上说的一句话，“如果使用循环，程序的性能可能更高；如果使用递归，程序可能更容易理解。如何选择要看什么对你来说更重要。”
-> 
+-   Big O notation indicates the **increase**in the running time of the algorithm
 
-- 每个递归函数都有两部分，基线条件(base case) 和 递归条件(recursive case)。递归条件指的是函数调用自己，基线条件指的是函数不再调用自己，从而避免形成无限循环。
-- 优化递归的调用栈，有2种方法
-	- 重新编写代码，转而使用循环
-	- 使用尾递归。这是一个高级的主题，不在本书的讨论范围内，另外，并非所有的语言都支持尾递归。
-- 编写涉及数组的递归函数的时候，基线条件通常是数组为空或只包含一个元素。
+-   Algorithm runtime is measured in terms of its speedup
+    > A quote from Leigh Caldwell on Stack Overflow, "Your program may be more performant if you use loops; it may be easier to understand if you use recursion. How you choose what to look at is more important to you."
 
+-   Every recursive function has two parts, the base case and the recursive case. A recursive condition means that the function calls itself, and a baseline condition means that the function does not call itself any more, thus avoiding an infinite loop.
 
-> Haskell 等函数式编程语言就没有循环，因此你只能使用递归来编写这样的函数。如果你对递归有深入的认识，函数式编程语言学习起来将更加容易。如果你喜欢递归或者想学习一门新语言，可以研究一下 Haskell。
+-   Optimize the recursive call stack, there are 2 methods
 
-- 散列表要避免冲突，需要有：
-	- 较低的装填因子
-	- 良好的散列函数
+-   Rewrite the code to use loops instead
 
-- 有向图中的边为箭头，箭头的方向指定了关系的方向。无向图中的边不带箭头，其中的关系是双向的。
-- 广度优先搜索求最短路径，对于检查过的点，务必不要再去检查，否则会导致无限循环。
+-   Use tail recursion. This is an advanced topic beyond the scope of this book, and not all languages ​​support tail recursion.
 
-- 在无向图中，每条边都是一个环。迪杰斯特拉算法只能用于**有向无环图**(directed acyclic graph, DAG)，如果有负权边，就不能使用迪杰斯特拉算法。
+-   When writing recursive functions involving arrays, the baseline condition is usually that the array is empty or contains only one element.
+    > Functional programming languages ​​like Haskell don't have loops, so you can only write such functions using recursion. Functional programming languages ​​are easier to learn if you have a solid understanding of recursion. If you like recursion or want to learn a new language, check out Haskell.
 
-- 在有负权边的图中，要求最短路径，需要用到贝尔曼-福德算法(Bellman-Ford algorithm)
-- 贪心算法的理念：每步都采取最优解。每步都选择局部最优解，最终得到的就是全局最优解。
-- 判断是否是 NP 完全问题
-	- 元素较少时算法的运行速度非常快，但随着元素数量的增加，速度会变得非常慢。
-	- 涉及“所有组合”的问题通常是 NP 完全问题。
-	- 不能将问题分成小问题，必须考虑各种可能的情况。这可能是 NP 完全问题。
-	- 如果问题涉及序列，（如旅行商问题中的城市序列）且难以解决，它可能就是 NP 完全问题。
-	- 如果问题涉及集合(如广播台集合)，且难以解决，它可能就是 NP 完全问题。
-	- 如果问题可转换为集合覆盖问题或旅行商问题，那它肯定是 NP 完全问题。
+-   To avoid conflicts in the hash table, you need to have:
 
-- 对于 NP 完全问题，还没有找到快速解决方案。
-- 面临 NP 完全问题，最佳的做法是使用近似算法。
-- 仅当每个子问题都是离散的，即不依赖于其他子问题时，动态规划才管用。
-- 每种动态规则解决方案都涉及网格。
-- 没有放之四海皆准的计算动态规划的公式，**动态规划是一门艺术**。
-- git diff 命令指出两个文件的差异，使用的就是动态规划实现的。
-- 布隆过滤器是一个概率型数据结构，它提供的答案有可能不对，但很可能是正确的。**可能出现错报的情况，但是不可能出现漏报的情况**。布隆过滤器非常适合用于不要求答案绝对准确的情况。
-- 面临海量数据且只要求答案八九不离十时，可考虑使用概率型算法。
-- 当前最安全的密码散列函数是 bcrypt，但没有任何东西是万无一失的。
-- SHA 散列函数是局部不敏感的，有一个字符变化，都会导致其散列值截然不同。有时候希望散列函数是局部敏感的。在这种情况下，可使用 Simhash。如果你对字符串做细微的修改，Simhash 生成的散列值也只存在细微的差别。这让你能够通过比较散列值来判断两个字符串的相似程度。需要检查两项内容的相似程序时，Simhash 很有用。
-	- Google 使用 Simhash 来判断网页是否已搜集。
-	- 老师可以使用 Simhash 来判断学生的论文是否是从网上抄的。
-	- Scribd 允许用户上传文档或图书，以便与人分享，但不希望用户上传有版权的内容。这个网站可使用 Simhash 来检查上传的内容是否与出版的小说类似，如果类似，就自动拒绝。
+-   lower fill factor
+
+-   good hash function
+
+-   The edges in a directed graph are arrows, and the direction of the arrow specifies the direction of the relationship. Edges in undirected graphs do not have arrows, where relationships are bidirectional.
+
+-   Breadth-first search seeks the shortest path. For the checked points, be sure not to check again, otherwise it will lead to an infinite loop.
+
+-   In an undirected graph, each edge is a cycle. Dijkstra's algorithm can only be used on **directed acyclic graph**(directed acyclic graph, DAG). If there are negative weight edges, Dijkstra's algorithm cannot be used.
+
+-   In a graph with negative weight edges, the shortest path is required, and the Bellman-Ford algorithm (Bellman-Ford algorithm) is required
+
+-   The concept of greedy algorithm: take the optimal solution at each step. The local optimal solution is selected at each step, and finally the global optimal solution is obtained.
+    \-Determine whether the problem is NP-complete
+
+-   The algorithm runs very fast with fewer elements, but becomes very slow as the number of elements increases.
+
+-   Problems involving "all combinations" are usually NP-complete.
+
+-   Problems cannot be broken down into sub-problems, every possible situation must be considered. This may be an NP-complete problem.
+
+-   If the problem involves sequences, (like the sequence of cities in the traveling salesman problem) and is hard to solve, it is probably NP-complete.
+
+-   If the problem involves sets (like the set of radio stations) and is hard to solve, it is probably NP-complete.
+
+-   If the problem can be transformed into a set covering problem or a traveling salesman problem, then it must be NP-complete.
+
+-   No fast solutions have been found for NP-complete problems.
+
+-   Faced with NP-complete problems, the best course of action is to use approximation algorithms.
+
+-   Dynamic programming works only if each subproblem is discrete, i.e. does not depend on other subproblems.
+
+-   Every dynamic rule solution involves a grid.
+
+-   There is no one-size-fits-all formula for calculating dynamic programming, **dynamic programming is an art**.
+
+-   The git diff command points out the difference between two files, which is implemented using dynamic programming.
+
+-   A Bloom filter is a probabilistic data structure that provides answers that may not be correct, but are likely to be correct. **Misreporting may occur, but false reporting is impossible**. Bloom filters are great for situations where absolutely accurate answers are not required.
+
+-   When faced with massive data and only require the answer to be close to ten, you may consider using a probabilistic algorithm.
+
+-   Currently the most secure password hashing function is bcrypt, but nothing is foolproof.
+
+-   The SHA hash function is insensitive to locality, and a single character change will cause its hash value to be completely different. Sometimes it is desirable for a hash function to be locality sensitive. In this case, Simhash can be used. If you make slight changes to the string, the hash value generated by Simhash will only be slightly different. This allows you to determine how similar two strings are by comparing the hash values. Simhash is useful when you need a similar program to check two things.
+    -   Google uses Simhash to determine whether a page has been collected.
+    -   Teachers can use Simhash to judge whether a student's paper is copied from the Internet.
+    -   Scribd allows users to upload documents or books to share with others, but does not want users to upload copyrighted content. This site can use Simhash to check whether the uploaded content is similar to the published novel, and automatically reject it if it is similar.

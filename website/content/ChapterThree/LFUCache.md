@@ -358,11 +358,9 @@ func (this *LFUCache) Put(key int, value int) {
 	this.nodes[key] = newNode
 }
 
-```
-
 
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LRUCache/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterFour/">下一章➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LRUCache/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterFour/">next chapter➡️</a></p>
 </div>

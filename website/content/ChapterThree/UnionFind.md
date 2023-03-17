@@ -4,13 +4,13 @@ type: docs
 weight: 2
 ---
 
-# 并查集 UnionFind
+# and lookup UnionFind
 
 ```go
 package template
 
 // UnionFind defind
-// 路径压缩 + 秩优化
+//path compression + rank optimization
 type UnionFind struct {
 	parent, rank []int
 	count        int
@@ -65,7 +65,7 @@ func (uf *UnionFind) TotalCount() int {
 }
 
 // UnionFindCount define
-// 计算每个集合中元素的个数 + 最大集合元素个数
+//Calculate the number of elements in each collection + the maximum number of collection elements
 type UnionFindCount struct {
 	parent, count []int
 	maxUnionCount int
@@ -90,7 +90,7 @@ func (uf *UnionFindCount) Find(p int) int {
 	return root
 }
 
-// 不进行秩压缩，时间复杂度爆炸，太高了
+//Without rank compression, the time complexity explodes, too high
 // func (uf *UnionFindCount) union(p, q int) {
 // 	proot := uf.find(p)
 // 	qroot := uf.find(q)
@@ -145,8 +145,9 @@ func max(a int, b int) int {
 ```
 
 
+
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/Segment_Tree/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LRUCache/">下一页➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/Segment_Tree/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/LRUCache/">next page➡️</a></p>
 </div>

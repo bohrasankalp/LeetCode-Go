@@ -19,10 +19,12 @@ weight: 19
 |1649|Create Sorted Array through Instructions|[Go]({{< relref "/ChapterFour/1600~1699/1649.Create-Sorted-Array-through-Instructions.md" >}})|Hard||||37.3%|
 |------------|-------------------------------------------------------|-------| ----------------| ---------------|-------------|-------------|-------------|
 ---|-------------|
+---|-------------|
+
 
 
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/Segment_Tree/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterThree/">下一章➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterTwo/Segment_Tree/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterThree/">next chapter➡️</a></p>
 </div>

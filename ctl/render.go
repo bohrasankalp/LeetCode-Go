@@ -273,7 +273,7 @@ func buildBookMenu() {
 		fmt.Println(err)
 		return
 	}
-	util.WriteFile("./website/content/menu/index.md", res)
+	util.WriteFile("../website/content/menu/index.md", res)
 	fmt.Println("generate Menu successful")
 }
 

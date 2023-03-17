@@ -1,32 +1,31 @@
 ---
-title: 1.1 数据结构知识
+title: 1.1 Data structure knowledge
 type: docs
 weight: 1
 ---
+# Data structure knowledge
 
-# 数据结构知识
+The following is the knowledge related to the data structure compiled by the author. Hope to enumerate all common data structures exhaustively. If there are any omissions, please enlighten me and raise PR. Relevant topics are still being sorted out slowly, and the articles explained are still being created.
 
-以下是笔者整理的数据结构相关的知识。希望能把常见的数据结构都枚举穷尽。如有遗漏，欢迎大家赐教，提 PR。相关题目还在慢慢整理中，讲解的文章还在创作中。
+> Writing questions is just a means to improve algorithmic ability, the ultimate goal should be to improve self-thinking ability, knowledge needs to be condensed into blocks, then summarize these in the first two sections of Chapter 1, let it be sublimated~ I hope readers are reading After finishing the questions and looking back at this form, you can clearly sort out your knowledge system, check for gaps and fill in gaps, and improve them as soon as possible.
 
-> 刷题只是提升算法能力的手段，最终目的应该是提升自我的思维能力，知识需要凝结成块，那么就把这些总结在第一章这两节中，让它得到升华吧~希望读者在刷完题之后再回过头来看这个表格，能很清晰的梳理自己的知识体系，查缺补漏，尽早完善。
-
-| 数据结构 | 变种 | 相关题目 | 讲解文章 | 
+| Data Structures | Variations | Related Topics | Explained Articles |
 |:-------:|:-------|:------|:------|
-|顺序线性表：向量 <br>Vector||||
-|单链表<br>Singly Linked List|1. 双向链表 Double Linked Lists<br>2. 静态链表 Static List<br>3. 对称矩阵 Symmetric Matrix<br>4. 稀疏矩阵 Sparse Matrix|||
-|哈希表<br>Hash Table|1. 散列函数 Hash Function<br>2. 解决碰撞/填充因子 Collision Resolution<br>|||
-|栈和队列<br>Stack & Queue|1. 广义表 Generalized List/GList<br>2. 双端队列 Deque<br>|||
-|队列<br>Queue|1. 链表实现 Linked List Implementation<br>2. 循环数组实现 ArrayQueue<br>3. 双端队列 Deque<br>4. 优先队列 Priority Queue<br>5. 循环队列 Circular Queue|||
-|字符串<br>String|1. KMP 算法<br>2. 有限状态自动机<br>3. 模式匹配有限状态自动机<br>4. BM 模式匹配算法<br>5. BM-KMP 算法<br>6. BF 算法|||
-|树<br>Tree|1. 二叉树 Binary Tree<br>2. 并查集 Union-Find<br>3. Huffman 树|||
-|数组实现的堆<br>Heap|1. 极大堆和极小堆 Max Heap and Min Heap<br>2. 极大极小堆<br>3. 双端堆 Deap<br>4. d 叉堆|||
-|树实现的堆<br>Heap|1. 左堆 Leftist Tree/Leftist Heap<br>2. 扁堆<br>3. 二项式堆<br>4. 斐波那契堆 Fibonacco Heap<br>5. 配对堆 Pairing Heap|||
-|查找<br>Search|1. 哈希表 Hash<br>2. 跳跃表 Skip List<br>3. 排序二叉树 Binary Sort Tree<br>4. AVL 树<br>5. B 树 / B+ 树 / B* 树<br>6. AA 树<br>7. 红黑树 Red Black Tree<br>8. 排序二叉堆 Binary Heap<br>9. Splay 树<br>10. 双链树 Double Chained Tree<br>11. Trie 树<br>12. R 树|||
+|Sequential Linear Table: Vector <br>Vector||||
+|Singly Linked List<br>Singly Linked List|1. Double Linked Lists<br>2. Static List<br>3. Symmetric Matrix<br>4. Sparse Matrix|||
+|Hash Table<br>Hash Table|1. Hash Function<br>2. Collision Resolution<br>|||
+|Stack and Queue<br>Stack & Queue|1. Generalized List/GList<br>2. Deque<br>|||
+|Queue<br>Queue|1. Linked List Implementation<br>2. Circular Array Realization ArrayQueue<br>3. Double-ended Queue Deque<br>4. Priority Queue Priority Queue<br>5. Circular Queue Circular Queue |||
+|String<br>String|1. KMP Algorithm<br>2. Finite State Automata<br>3. Pattern Matching Finite State Automata<br>4. BM Pattern Matching Algorithm<br>5. BM-KMP Algorithm <br>6. BF algorithm|||
+|Tree<br>Tree|1. Binary Tree<br>2. Union-Find<br>3. Huffman Tree|||
+|Array Realized Heap<br>Heap|1. Max Heap and Min Heap<br>2. Max Heap<br>3. Double-ended Deap<br>4. d fork heap|||
+|Heap implemented by tree<br>Heap|1. Leftist Tree/Leftist Heap<br>2. Flat heap<br>3. Binomial heap<br>4. Fibonacco Heap<br> 5. Pairing Heap|||
+|Find<br>Search|1. Hash table Hash<br>2. Skip List<br>3. Binary Sort Tree<br>4. AVL tree<br>5. B tree/B+ tree/B*Tree<br>6. AA Tree<br>7. Red Black Tree<br>8. Binary Heap<br>9. Splay Tree<br>10. Double Chained Tree <br>11. Trie tree<br>12. R tree|||
 |--------------------------------------------|--------------------------------------------------------------------------------------------|---------------------------|-----------------------------------|
 
 
 ----------------------------------------------
 <div style="display: flex;justify-content: space-between;align-items: center;">
-<p><a href="https://books.halfrost.com/leetcode/ChapterOne/">⬅️上一页</a></p>
-<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Algorithm/">下一页➡️</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterOne/">⬅️previous page</a></p>
+<p><a href="https://books.halfrost.com/leetcode/ChapterOne/Algorithm/">next page➡️</a></p>
 </div>
