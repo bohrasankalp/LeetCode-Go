@@ -8,19 +8,19 @@ The data size that can solve the problem within 1s: 10^6 ~ 10^7
 -   O(n) algorithm can handle data scale of 10^8 level (conservative estimate, it is definitely no problem to deal with 10^7 level problems)
 -   O(nlog n) algorithm can handle data scale of 10^7 level (conservative estimate, it is definitely no problem to deal with 10^6 level problems)
 
-|                  |     Data size    |                           Time complexity                          |                               Algorithm example                              |
-| :--------------: | :--------------: | :----------------------------------------------------------------: | :--------------------------------------------------------------------------: |
-|         1        |        10        |                                O(n!)                               |                           permutation permutations                           |
-|         2        |       20~30      |                               O(2^n)                               |                            combination combination                           |
-|         3        |        50        |                               O(n^4)                               |                      DFS search, DP dynamic programming                      |
-|         4        |        100       |                               O(n^3)                               |       The shortest path between any two points, DP dynamic programming       |
-|         5        |       1000       |                               O(n^2)                               |                      Dense graph, DP dynamic programming                     |
-|         6        |       10^6       |                              O(nlog n)                             |                sorting, heap, recursion and divide and conquer               |
-|         7        |       10^7       |                                O(n)                                | DP dynamic programming, graph traversal, topological sorting, tree traversal |
-|         8        |       10^9       |                             O(sqrt(n))                             |                     Sieve prime numbers, find square root                    |
-|         9        |       10^10      |                              O(log n)                              |                                 Binary Search                                |
-|        10        |        +∞        |                                O(1)                                |                        Mathematics-related algorithms                        |
-| ---------------- | ---------------- | ------------------------------------------------------------------ |                       --------------------------------                       |
+|     | Data size | Time complexity | Algorithm example                                                                        |
+|:---:|:----------|:----------------|:-----------------------------------------------------------------------------------------|
+|  1  | 10        | O(n!)           | permutations                                                                             |
+|  2  | 20~30     | O(2^n)          | combination                                                                              |
+|  3  | 50        | O(n^4)          | DFS search,<br/> DP dynamic programming                                                  |
+|  4  | 100       | O(n^3)          | The shortest path between any two points,<br/>DP dynamic programming                     |
+|  5  | 1000      | O(n^2)          | Dense graph, DP dynamic programming                                                      |
+|  6  | 10^6      | O(nlog n)       | sorting,<br/>heap,<br/>recursion and divide and conquer                                  |
+|  7  | 10^7      | O(n)            | DP dynamic programming,<br/>graph traversal,<br/>topological sorting,<br/>tree traversal |
+|  8  | 10^9      | O(sqrt(n))      | Sieve prime numbers,<br/>find square root                                                |
+|  9  | 10^10     | O(log n)        | Binary Search                                                                            |
+| 10  | +∞        | O(1)            | Mathematics-related algorithms                                                           |
+|     |           |                 |                                                                                          |
 
 Some deceptive examples:
 
